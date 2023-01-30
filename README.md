@@ -18,7 +18,7 @@ Activate virtual environment for windows.
 ```
 Project Git URL.
 ```
-    https://github.com/Rajraut7719/SIGNUP-OTP-WITH-MOBILENO.git
+   https://github.com/Rajraut7719/drfecommerce_backend_api.git
 ```
 Install requirements .txt
 ```
