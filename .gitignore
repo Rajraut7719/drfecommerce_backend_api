@@ -4,4 +4,6 @@ ENV/
 .vscode
 .coverage
 .pytest_cache
+schema.yml
 **__pycache__/
+htmlcov/
