@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'ecommerce.product.apps.ProductConfig',
     'rest_framework',
+    'django_filters',
     
    
 ]
