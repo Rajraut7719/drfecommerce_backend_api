@@ -30,18 +30,26 @@ class BrandViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
 class ProductViewSet(viewsets.ViewSet):
+    """
+        A simple Viewset for viewing all products
+    """
     queryset = Product.objects.all()
-    serializer_class =  ProductSerializer
+    # lookup_field = "slug"
+
+    def retrieve(self, request, pk=None):
+        serializer = ProductSerializer(self.queryset.filter(pk=pk),many=True)
+
+        return Response(serializer.data)
+
     def list(self,request):
-        serializer = self.serializer_class(self.queryset,many=True)
+        serializer = ProductSerializer(self.queryset,many=True)
         return Response(serializer.data)
     @action(detail=False,methods=['GET'],url_path=r"category/(?P<category>\w+)/all")
     def list_product_by_category(self,request,category=None):
         """
             An endpoint to return product by category
         """
-        
-        serializer = self.serializer_class(self.queryset.filter(category__name=category),many=True)
+        serializer = ProductSerializer(self.queryset.filter(category__name=category),many=True)
         return Response(serializer.data)
 
 
