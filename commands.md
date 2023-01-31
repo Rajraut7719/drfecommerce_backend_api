@@ -8,6 +8,8 @@ pytest-django==4.5.2
 django-mptt==0.14.0
 django-treebeard==4.6.0
 drf-spectacular==0.25.1
+sqlparse==0.4.3
+Pygments==2.14.0
 
 # Commands
 django-admin startproject ecommerce
