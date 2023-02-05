@@ -10,6 +10,7 @@ django-treebeard==4.6.0
 drf-spectacular==0.25.1
 sqlparse==0.4.3
 Pygments==2.14.0
+Pillow==9.4.0
 
 # Commands
 django-admin startproject ecommerce
