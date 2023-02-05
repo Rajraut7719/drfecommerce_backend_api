@@ -44,7 +44,6 @@ class ProductViewSet(viewsets.ViewSet):
     queryset = Product.objects.all()
   
     # lookup_field = "slug"
-
     def retrieve(self, request, pk=None):
         serializer = ProductSerializer(self.queryset.filter(pk=pk).select_related('category','brand'), many=True)
         data =Response(serializer.data)
@@ -52,12 +51,13 @@ class ProductViewSet(viewsets.ViewSet):
         # x= self.queryset.filter(pk=pk)
         # sqlformated = format(str(x.query),reindent =True)
         # print(highlight(sqlformated,RqlLexer(),TerminalFormatter()))
-        q= list(connection.queries)
-        # print(len(q))
-        for qs in q:
-            sqlformated = format(str(qs["sql"]),reindent=True)
-            print(highlight(sqlformated,RqlLexer(),TerminalFormatter()))
-            print(len(q))
+        # q= list(connection.queries)
+        # # print(len(q))
+        # for qs in q:
+        #     sqlformated = format(str(qs["sql"]),reindent=True)
+        #     print(highlight(sqlformated,RqlLexer(),TerminalFormatter()))
+        #     print(len(q))
+
 
 
         return data
